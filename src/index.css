@@ -17,15 +17,16 @@ a {
 }
 
 .btn {
-  text-transform: uppercase;
+
   margin: 35px auto;
   padding: 10px;
-  border: 1px solid rgba(0,0,0,.29);
+  border: 1px solid rgba(88, 105, 255, 0.384);
   cursor: pointer;
   background: #fff;
   font-size: 16px;
   width: 250px;
   position: relative;
+  border-radius: 2em;
 }
 
 .btn:hover {
@@ -37,6 +38,7 @@ a {
   outline: 0;
   font-weight: 700;
   border-width: 2px;
+  
 }
 
 .center {
@@ -152,12 +154,19 @@ li {
 }
 
 .textarea {
-  border-radius: 4px;
-  border: 1px solid #dad7d7;
+  border-radius: 16px;
+  border: 1px solid rgba(88, 105, 255, 0.384);
   padding: 10px;
   font-size: 15px;
   height: 100px;
 }
+
+.textarea:focus {
+  outline: none !important;
+  border:1px solid blue;
+  box-shadow: 0 0 5px #80a4da;
+}
+
 
 .tweet-length {
   text-align: right;

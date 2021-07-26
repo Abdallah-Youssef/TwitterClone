@@ -2,8 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { formatTweet, formatDate } from '../utils/helpers'
 import { MdFavorite, MdFavoriteBorder, MdReply } from "react-icons/md";
+import { handleToggleTweet } from '../actions/tweets';
 
-const Tweet = ({ authedUser, tweet }) => {
+const Tweet = ({ authedUser, tweet, dispatch }) => {
     if (tweet === null)
         return (<h1 className="center"> Sorry, tweet not found</h1>)
 
@@ -20,8 +21,8 @@ const Tweet = ({ authedUser, tweet }) => {
 
     const handleLike = (e, liked) => {
         e.preventDefault()
-
-        // Dipsatch like
+        
+        dispatch(handleToggleTweet({id, authedUser, hasLiked}))
     }
 
 
