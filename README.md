@@ -9,5 +9,5 @@ A web app created with React and react-redux.
 
 ## Install Instructions
 
-* clone the Project - `git@github.com:udacity/reactnd-chirper-app.git`
+* clone the Project - `https://github.com/Abdallah-Youssef/TwitterClone.git`
 * install the dependencies - `npm install`
