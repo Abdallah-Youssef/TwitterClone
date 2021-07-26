@@ -129,9 +129,13 @@ li {
   border: none;
   background: transparent;
   margin: 0;
+
   padding: 0;
+  padding-top: 0.2em;
+  
   color: #969696;
   cursor: pointer;
+  text-align: left;
 }
 
 .heart-button {
