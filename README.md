@@ -9,5 +9,5 @@ A web app created with React and react-redux.
 
 ## Install Instructions
 
-* clone the Project - `https://github.com/Abdallah-Youssef/TwitterClone.git`
+* clone the Project - `git clone https://github.com/Abdallah-Youssef/TwitterClone.git`
 * install the dependencies - `npm install`
