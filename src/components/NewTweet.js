@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { handleAddTweet } from '../actions/tweets'
 
 
 const NewTweet = ({dispatch, id}) => {
     const [text, setText] = useState('')
+    let history = useHistory()
     
     const handleChange = (e) => {
         setText(e.target.value)
@@ -16,6 +18,10 @@ const NewTweet = ({dispatch, id}) => {
         //console.log("Submitted text",text);
         dispatch(handleAddTweet(text, id))
         setText('')
+
+        if (!id){
+            history.push('/')
+        }
 
     }
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { formatTweet, formatDate } from '../utils/helpers'
 import { MdFavorite, MdFavoriteBorder, MdReply } from "react-icons/md";
 import { handleToggleTweet } from '../actions/tweets';
+import { Link } from 'react-router-dom';
 
 const Tweet = ({ authedUser, tweet, dispatch }) => {
     if (tweet === null)
@@ -13,21 +14,17 @@ const Tweet = ({ authedUser, tweet, dispatch }) => {
         name, avatar, timestamp, text, hasLiked, likes, replies, id, parent
     } = tweet
 
-    const toParent = (e, id) => {
-        e.preventDefault()
-        console.log("To tweet ", id);
-        // Redirect to tweet id
-    }
+
 
     const handleLike = (e, liked) => {
         e.preventDefault()
-        
+
         dispatch(handleToggleTweet({id, authedUser, hasLiked}))
     }
 
 
     return (
-        <div className="tweet">
+        <Link to={`/tweet/${id}`} className="tweet">
             <img src={avatar} alt={`Avatar of ${name}`} className="avatar" />
 
 
@@ -37,9 +34,9 @@ const Tweet = ({ authedUser, tweet, dispatch }) => {
                     <div>{formatDate(timestamp)}</div>
 
                     {parent && (
-                        <button className="replying-to" onClick={(e) => toParent(e, id)}>
+                        <Link to={`/tweet/${parent.id}`} className="replying-to" >
                             Replying to @{parent.author}
-                        </button>
+                        </Link>
                     )}
 
                     <p>{text}</p>
@@ -61,7 +58,7 @@ const Tweet = ({ authedUser, tweet, dispatch }) => {
 
             </div>
 
-        </div>
+        </Link>
     )
 }
 
