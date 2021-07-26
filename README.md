@@ -2,9 +2,9 @@
 A web app created with React and react-redux.
 
 ## Features
-* Add tweet
+* Compose new tweet
 * Like tweet
-* Comment on tweets
+* Reply to any tweet
 
 
 ## Install Instructions
